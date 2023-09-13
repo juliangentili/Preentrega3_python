@@ -1,0 +1,12 @@
+{% extends "padre.html" %}
+
+
+
+{% block variable %}
+
+<form action="{% url 'formulario_tuercas' %}" method="post">{% csrf_token %}
+    {{form_ruedas.as_p}}
+    <button type="submit"> "enviar"</button>
+</form>
+            
+{% endblock variable %}

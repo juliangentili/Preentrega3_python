@@ -1,0 +1,1 @@
+Se creo una pagina web con funcionabilidad entre las distintas secciones , se puede agregar un neumatico , y tambien se puede buscar un neumatico y esta devuelve lo que existe en la base de datos , falta lograr traer tambien a la vista el rodado del neumatico , tambien se puede acceder al admin del proyecto cuyo superusuario es juliangentili y su clave es 52550373

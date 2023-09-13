@@ -1,0 +1,12 @@
+{% extends "padre.html" %}
+
+
+
+{% block variable %}
+
+<form action="{% url 'buscar' %}" method="get">
+   <p>Marca: <input type="text" name="marca"></p>
+   <button type="submit"> Enviar</button>
+</form>
+            
+{% endblock variable %}
