@@ -11,5 +11,5 @@ urlpatterns = [
     path('formulario_rueda/', formulario_rueda , name="formulario_rueda"),
     path('formulario_tuercas/', tuercas_formulario , name="formulario_tuercas"),
     path('busqueda_neumatico/',busquedaNeumatico , name="busquedaNeumatico"),
-     path('buscar/',buscar , name="buscar"),
+    path('buscar/',buscar , name="buscar"),
 ]

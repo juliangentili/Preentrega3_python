@@ -52,8 +52,9 @@ def tuercas_formulario(req):
          tuerca.save()
          return render (req , "index.html")
    else:
-       form_ruedas= Antirrobo
-       return render (req, "formulario_tuercas.html", {"form_ruedas": form_ruedas})       
+       form_ruedas= Antirrobo()
+
+   return render (req, "formulario_tuercas.html", {"form_ruedas": form_ruedas})           
    
 
 def busquedaNeumatico(req):
@@ -62,14 +63,14 @@ def busquedaNeumatico(req):
 
   
 def buscar(req):
+    marca = req.GET.get("marca", "")
 
-    if req.GET["marca"]:
-        marca = req.GET["marca"]
-        neumatico = Neumatico.objects.filter(marca = marca)
-        return render (req, "resultado.html", {"marca": marca})
-    else : 
-        return HttpResponse(f"debe ingresar la marca del neumatico")
+    if marca:
+        neumaticos = Neumatico.objects.filter(marca__icontains=marca)
+        return render(req, "resultado.html", {"marca": marca, "neumaticos": neumaticos})
+    else:
+        return HttpResponse("Debe ingresar la marca del neumático.")
 
-    return HttpResponse(f"buscando el neumatico {req.GET['marca']}")
+    return HttpResponse(f"Buscando el neumático con marca: {marca}")
 
 

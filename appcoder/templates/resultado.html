@@ -1,9 +1,11 @@
 {% extends "padre.html" %}
 
-
-
 {% block variable %}
- <p>resultados de la busqueda del neumatico</p>
+    <p>Resultados de la búsqueda del neumático con marca: {{ marca }}</p>
 
- {{marca}}
+    <ul>
+        {% for neumatico in neumaticos %}
+            <li>{{ neumatico.marca }} - {{ neumatico.rodado }}</li>
+        {% endfor %}
+    </ul>
 {% endblock variable %}
