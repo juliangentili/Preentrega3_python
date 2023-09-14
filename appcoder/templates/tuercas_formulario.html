@@ -4,8 +4,8 @@
 
 {% block variable %}
 
-<form action="{% url 'formulario_rueda' %}" method="post">{% csrf_token %}
-    {{miformulario.as_p}}
+<form action="{% url 'tuercas_formulario' %}" method="post">{% csrf_token %}
+    {{form_tuercas.as_p}}
     <button type="submit"> enviar</button>
 </form>
             

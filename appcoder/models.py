@@ -7,7 +7,7 @@ class Neumatico(models.Model):
     rodado = models.IntegerField()
     valor = models.IntegerField(null=True,blank=True)
     
-    def __Str__(self):
+    def __str__(self):
         return f"{self.marca} - {self.rodado}"
 
 
@@ -18,6 +18,10 @@ class Usuario(models.Model):
 class Antirrobo(models.Model):
     marca = models.CharField(max_length=40)
     precio = models.IntegerField()
+
+    def __str__(self):
+        return f"tuerca marca : {self.marca} - precio : {self.precio}"
+
 
 class clientes(models.Model):   
     nombre = models.CharField(max_length=40)

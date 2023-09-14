@@ -45,16 +45,16 @@ def tuercas_formulario(req):
    print("POST" , req.POST)
 
    if req.method == "POST":
-      form_ruedas = Antirrobo(req.POST)
-      if form_ruedas.is_valid():
-         data = form_ruedas.cleaned_data
+      form_tuercas = tuercasFormulario(req.POST)
+      if form_tuercas.is_valid():
+         data = form_tuercas.cleaned_data
          tuerca = Antirrobo(marca=data["marca"],precio=data["precio"])
          tuerca.save()
          return render (req , "index.html")
    else:
-       form_ruedas= Antirrobo()
+       form_tuercas= tuercasFormulario()
 
-   return render (req, "formulario_tuercas.html", {"form_ruedas": form_ruedas})           
+   return render (req, "tuercas_formulario.html", {"form_tuercas": form_tuercas})           
    
 
 def busquedaNeumatico(req):
